@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { QuestionsProvider } from '../../providers/questions/questions';
 
 
-/**
- * Generated class for the QuestionPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 
 @IonicPage()
