@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 let apiQuestions = [
   {
       "Keyed": true,
-      "Text": "Am the life of the party.",
+      "Text": "I am the life of the party.",
       "Style": "Extraversion"
   },
   {
@@ -285,7 +285,7 @@ export class QuestionPage {
       "Extraversion": [],
       "Agreeableness": [],
       "Conscientiousness": [],
-      "Emotional Stability": []
+      "Emotional Stability": [],
     };
   }
 
