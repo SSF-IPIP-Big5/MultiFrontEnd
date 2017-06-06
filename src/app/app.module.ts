@@ -16,6 +16,7 @@ import { BigFiveSumPage } from '../pages/big-five-sum/big-five-sum';
 import { QuestionsProvider } from '../providers/questions/questions';
 import { AppUsersProvider } from '../providers/app-users/app-users';
 import { TestResultsProvider } from '../providers/test-results/test-results';
+import { HttpModule } from '@angular/http';
 
 
 let injections: any[] = [
@@ -34,7 +35,8 @@ let injections: any[] = [
   declarations: injections,
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: injections,
