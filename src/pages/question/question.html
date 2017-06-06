@@ -16,6 +16,7 @@
 <ion-content padding>
   <ion-slides pager paginationType="fraction">
     <ion-slide #option *ngFor="let question of questions">
+      Please select how much you agree with the following statements. 
       <ion-card>
         <ion-list radio-group [(ngModel)]="question.factor" #factor>
           <ion-list-header>
