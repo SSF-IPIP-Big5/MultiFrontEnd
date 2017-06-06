@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { QuestionsProvider } from '../../providers/questions/questions';
 
 
 /**
@@ -274,8 +275,19 @@ export class QuestionPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public questionsProv: QuestionsProvider
   ) {
+      questionsProv.getQuestions(/*insert token here later*/)
+      .map(res => res.json())
+      .subscribe( res => {
+          this.questions = res;
+          for(let singleQuestion of this.questions){
+          console.log(singleQuestion.Text);
+          }
+      }, error =>{
+        alert("Could not retrieve questions");
+      });
   }
 
   ionViewDidLoad() {
@@ -287,6 +299,9 @@ export class QuestionPage {
       "Conscientiousness": [],
       "Emotional Stability": [],
     };
+    
+    
+    
   }
 
   nextSlide(option) {
