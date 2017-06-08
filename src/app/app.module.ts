@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
+
 import { LandingPage } from '../pages/landing/landing';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
@@ -14,10 +15,11 @@ import { QuestionPage } from '../pages/question/question';
 import { HistoryPage } from '../pages/history/history';
 import { ResultsPage } from '../pages/results/results';
 import { BigFiveSumPage } from '../pages/big-five-sum/big-five-sum';
+
 import { QuestionsProvider } from '../providers/questions/questions';
 import { AppUsersProvider } from '../providers/app-users/app-users';
 import { TestResultsProvider } from '../providers/test-results/test-results';
-import { HttpModule } from '@angular/http';
+
 
 
 let injections: any[] = [
@@ -36,13 +38,8 @@ let injections: any[] = [
   declarations: injections,
   imports: [
     BrowserModule,
-<<<<<<< HEAD
-    IonicModule.forRoot(MyApp),
-    HttpModule
-=======
     HttpModule,
     IonicModule.forRoot(MyApp)
->>>>>>> 1cfe6a418214d92e9ac6d0f191873b938c3c0edb
   ],
   bootstrap: [IonicApp],
   entryComponents: injections,
