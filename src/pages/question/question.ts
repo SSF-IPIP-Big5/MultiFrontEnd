@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
-import { QuestionsProvider } from '../../providers/questions/questions';
 
 import { ResultsPage } from '../results/results';
+
+import { QuestionsProvider } from '../../providers/questions/questions';
 import { TestResultsProvider } from '../../providers/test-results/test-results';
 
-
-let apiQuestions = [
+//TODO - make this pull question from the server
+let apiQuestions = [ //abbreviated question set for testing
   {
       "Keyed": true,
       "Text": "Am the life of the party.",
@@ -57,207 +58,7 @@ let apiQuestions = [
       "Text": "Am quiet around strangers.",
       "Style": "Extraversion"
   }];
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am interested in people.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Sympathize with others' feelings.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Have a soft heart.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Take time out for others.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Feel others' emotions.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Make people feel at ease.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Am not really interested in others.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Insult people.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Am not interested in other people's problems.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Feel little concern for others.",
-  //     "Style": "Agreeableness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am always prepared.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Pay attention to details.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Get chores done right away.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Like order.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Follow a schedule.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am exacting in my work.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Leave my belongings around.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Make a mess of things.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Often forget to put things back in their proper place.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Shirk my duties.",
-  //     "Style": "Conscientiousness"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am relaxed most of the time.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Seldom feel blue.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Get stressed out easily.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Worry about things.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Am easily disturbed.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Get upset easily..",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Change my mood a lot.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Have frequent mood swings.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Get irritated easily.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Often feel blue.",
-  //     "Style": "Emotional Stability"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Have a rich vocabulary.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Have a vivid imagination.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Have excellent ideas.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am quick to understand things.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Use difficult words.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Spend time reflecting on things.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": true,
-  //     "Text": "Am full of ideas.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Have difficulty understanding abstract ideas.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Am not interested in abstract ideas.",
-  //     "Style": "Intellect"
-  // },
-  // {
-  //     "Keyed": false,
-  //     "Text": "Do not have a good imagination.",
-  //     "Style": "Intellect"
-  // }];
-
+  
 @IonicPage()
 @Component({
   selector: 'page-question',
@@ -275,7 +76,7 @@ export class QuestionPage {
     public questionsProv: QuestionsProvider,
     public testResults: TestResultsProvider
   ) {
-      questionsProv.getQuestions(/*insert token here later*/)
+      questionsProv.getQuestions()
       .map(res => res.json())
       .subscribe( res => {
           this.questions = res;
@@ -294,38 +95,31 @@ export class QuestionPage {
       "Extraversion": 0,
       "Agreeableness": 0,
       "Conscientiousness": 0,
-      "Emotional Stability": 0,
+      "EmotionalStability": 0,
       "Intellect": 0
     };
     
     
   }
-
-  // This function will call for the correct values of the score depending
-  // on whether it is Keyed false or true
+  
   keyedScore(option) {
-    console.log(option.Keyed);
-    if(option.Keyed === true) {
+    console.log("keyed option is: " + option.Keyed);
+    if(option.Keyed) { //this is if Keyed is set to TRUE
       this.testAnswers[option.Style] += parseInt(option.score);
-      console.log(option.score)
-    } else if(option.Keyed === false && option.score == "1") {
-      this.testAnswers[option.Style] += parseInt("5");
-      console.log("5")
-    } else if(option.Keyed === false && option.score == "2") {
-      this.testAnswers[option.Style] += parseInt("4");
-      console.log("4")
-    } else if(option.Keyed === false && option.score == "3") {
-      this.testAnswers[option.Style] += parseInt(option.score);
-      console.log(option.score)
-    } else if(option.Keyed === false && option.score == "4") {
-      this.testAnswers[option.Style] += parseInt("2");
-      console.log("2")
-    } else if(option.Keyed === false && option.score == "5") {
-      this.testAnswers[option.Style] += parseInt("1");
-      console.log("1")
+    } else if(!option.Keyed) { //this is if Keyed is set to FALSE
+      let optionMod = 0;
+      switch (option.score) { //reverse the scores for negatively keyed questions
+        case 1: optionMod = 5; break;
+        case 2: optionMod = 4; break;
+        case 3: optionMod = 3; break;
+        case 4: optionMod = 2; break;
+        case 5: optionMod = 1; break;
+      }
+      this.testAnswers[option.Style] += optionMod; //add the reversed score to the right Style
+      console.log("optionMod is now " + optionMod);
     }
   }
-
+  
   // When user clicks Submit button
   nextSlide(option) {
     console.log("Submitted");
@@ -339,9 +133,11 @@ export class QuestionPage {
     // All slides have been completed, move onto ResultsPage
     } else {
       this.testAnswers.createDate = new Date().toISOString();
+      this.testAnswers.userId = "58f83b7bec68fd375bff47c6"; // hard coded userId
       console.log("Finished Test", this.testAnswers)
-      let token = "RscrY7yAS8h0Hx3xF8jf21nLMp5yLfVJfn8I4qLEevbnxaC8KG3qsTBYk5XZIxEe";
-      this.testResults.saveTest(token, this.testAnswers)
+      let token = "fEMHZLODrwaGLISaSXPnhiEeNUnz65pSdOIEDzt4F3dnGHE1n1bAkAZJpFEwHZ7l"; //hard coded token
+      let results = this.testAnswers;
+      this.testResults.saveTest(token, results)
         .map(res => res.json())
         .subscribe(res =>{
           this.navCtrl.setRoot(ResultsPage, {
@@ -350,6 +146,7 @@ export class QuestionPage {
           });
         }, error => {
           alert("Test Results Fudged!!")
+          console.log(this.testAnswers);
           console.log(error)
         });
       }
