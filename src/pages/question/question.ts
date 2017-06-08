@@ -104,16 +104,16 @@ export class QuestionPage {
   
   keyedScore(option) {
     console.log("keyed option is: " + option.Keyed);
+    let optionMod = 0;
     if(option.Keyed) { //this is if Keyed is set to TRUE
       this.testAnswers[option.Style] += parseInt(option.score);
-    } else if(!option.Keyed) { //this is if Keyed is set to FALSE
-      let optionMod = 0;
-      switch (option.score) { //reverse the scores for negatively keyed questions
-        case 1: optionMod = 5; break;
-        case 2: optionMod = 4; break;
-        case 3: optionMod = 3; break;
-        case 4: optionMod = 2; break;
-        case 5: optionMod = 1; break;
+    } else if(option.Keyed === false) { //this is if Keyed is set to FALSE
+      switch (parseInt(option.score)) { //reverse the scores for negatively keyed questions
+        case 1: { optionMod = 5; console.log(optionMod); break; }
+        case 2: { optionMod = 4; console.log(optionMod); break; }
+        case 3: { optionMod = 3; console.log(optionMod); break; }
+        case 4: { optionMod = 2; console.log(optionMod); break; }
+        case 5: { optionMod = 1; console.log(optionMod); break; }
       }
       this.testAnswers[option.Style] += optionMod; //add the reversed score to the right Style
       console.log("optionMod is now " + optionMod);
