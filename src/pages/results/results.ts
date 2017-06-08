@@ -13,12 +13,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'results.html',
 })
 export class ResultsPage {
+  test: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    this.test = this.navParams.get("test");
     console.log('ionViewDidLoad ResultsPage');
+    console.log("Test as shown on Results Page", this.test);
   }
 
 }
