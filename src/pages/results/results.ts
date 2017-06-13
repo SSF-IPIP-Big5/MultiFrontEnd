@@ -36,7 +36,7 @@ export class ResultsPage {
             this.test["Extraversion"], 
             this.test["Agreeableness"], 
             this.test["Conscientiousness"], 
-            this.test["EmotionalStability"], 
+            this.test["Emotional Stability"], 
             this.test["Intellect"]
             ],
           backgroundColor: [

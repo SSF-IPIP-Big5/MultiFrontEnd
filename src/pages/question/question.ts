@@ -98,7 +98,7 @@ export class QuestionPage {
       "Extraversion": 0,
       "Agreeableness": 0,
       "Conscientiousness": 0,
-      "EmotionalStability": 0,
+      "Emotional Stability": 0,
       "Intellect": 0
     };
     
@@ -141,7 +141,7 @@ export class QuestionPage {
       // 
       this.token = window.localStorage.getItem('token');
       let results = this.testAnswers;
-      this.testResults.saveTest(token, results)
+      this.testResults.saveTest(this.token, results)
         .map(res => res.json())
         .subscribe(res =>{
           this.navCtrl.setRoot(ResultsPage, {

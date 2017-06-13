@@ -22,11 +22,13 @@ export class TestResultsProvider {
 
 
   //Retrieve test results with access token
-  getTestResults(token){
+  getTestResults(token, userId){
     return this.http.get(
       this.baseUrl + 
       this.path + 
+      '?filter[where][userId]=' + userId +
       '?access_token=' + token
+      
     );
   }
 
