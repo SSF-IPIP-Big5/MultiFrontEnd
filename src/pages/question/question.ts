@@ -107,7 +107,7 @@ export class QuestionPage {
     let optionMod = 0;
     if(option.Keyed) { //this is if Keyed is set to TRUE
       this.testAnswers[option.Style] += parseInt(option.score);
-    } else if(option.Keyed === false) { //this is if Keyed is set to FALSE
+    } else if(!option.Keyed) { //this is if Keyed is set to FALSE
       switch (parseInt(option.score)) { //reverse the scores for negatively keyed questions
         case 1: { optionMod = 5; console.log(optionMod); break; }
         case 2: { optionMod = 4; console.log(optionMod); break; }
