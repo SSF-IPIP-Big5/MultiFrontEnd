@@ -7,57 +7,57 @@ import { QuestionsProvider } from '../../providers/questions/questions';
 import { TestResultsProvider } from '../../providers/test-results/test-results';
 
 //TODO - make this pull question from the server
-let apiQuestions = [ //abbreviated question set for testing
-  {
-      "Keyed": true,
-      "Text": "Am the life of the party.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": true,
-      "Text": "Feel comfortable around people.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": true,
-      "Text": "Start conversations.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": true,
-      "Text": "Talk to a lot of different people at parties.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": true,
-      "Text": "Don't mind being the center of attention.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": false,
-      "Text": "Don't talk a lot.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": false,
-      "Text": "Keep in the background.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": false,
-      "Text": "Have little to say.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": false,
-      "Text": "Don't like to draw attention to myself.",
-      "Style": "Extraversion"
-  },
-  {
-      "Keyed": false,
-      "Text": "Am quiet around strangers.",
-      "Style": "Extraversion"
-  }];
+// let apiQuestions = [ //abbreviated question set for testing
+//   {
+//       "Keyed": true,
+//       "Text": "Am the life of the party.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": true,
+//       "Text": "Feel comfortable around people.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": true,
+//       "Text": "Start conversations.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": true,
+//       "Text": "Talk to a lot of different people at parties.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": true,
+//       "Text": "Don't mind being the center of attention.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": false,
+//       "Text": "Don't talk a lot.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": false,
+//       "Text": "Keep in the background.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": false,
+//       "Text": "Have little to say.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": false,
+//       "Text": "Don't like to draw attention to myself.",
+//       "Style": "Extraversion"
+//   },
+//   {
+//       "Keyed": false,
+//       "Text": "Am quiet around strangers.",
+//       "Style": "Extraversion"
+//   }];
   
 @IonicPage()
 @Component({
@@ -82,6 +82,8 @@ export class QuestionPage {
           this.questions = res;
           for(let singleQuestion of this.questions){
             console.log(singleQuestion.Text);
+            console.log(singleQuestion);
+            
           }
       }, error =>{
         alert("Could not retrieve questions");
@@ -125,7 +127,7 @@ export class QuestionPage {
     console.log("Submitted");
     console.log(option.Style);
     this.keyedScore(option);
-    if(this.slides.getActiveIndex() + 1 !== apiQuestions.length) {
+    if(this.slides.getActiveIndex() + 1 !== this.questions.length) {
       this.slides.lockSwipes(false);
       this.slides.slideTo(this.slides.getActiveIndex() + 1);
       this.slides.lockSwipes(true);
