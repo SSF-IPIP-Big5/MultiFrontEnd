@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login'
+
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
 /**
  * Generated class for the LandingPage page.
  *
@@ -21,6 +23,9 @@ export class LandingPage {
     console.log('ionViewDidLoad LandingPage');
   }
   goTologInPage() {
-  this.navCtrl.push(LoginPage)
+    this.navCtrl.push(LoginPage)
+  }
+  goToRegisterPage() {
+    this.navCtrl.push(RegisterPage)
   }
 }
