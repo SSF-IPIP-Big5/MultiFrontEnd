@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { QuestionPage } from '../question/question';
-import { LandingPage } from '../landing/landing';
+// import { LandingPage } from '../landing/landing';
 import { BigFiveSumPage } from '../big-five-sum/big-five-sum';
 
 /**
