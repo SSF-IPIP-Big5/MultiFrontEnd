@@ -11,8 +11,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class QuestionsProvider {
 
+<<<<<<< HEAD
   //Strongloop API Explorer's request URL 
   baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+=======
+  //Strongloop API Explorer's request URL - regular
+  baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+  //for Sal's work
+  // baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io/api";
+>>>>>>> 7c6789ddfa3c85e645710f0d3fe7ada0ca250907
   path: string = "/Questions";
   
   constructor(public http: Http) {

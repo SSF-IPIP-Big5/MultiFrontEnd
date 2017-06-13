@@ -33,11 +33,11 @@ export class ResultsPage {
           ],
         datasets: [{
           data: [
-            1.5, 
-            3.6, 
-            2.7, 
-            2, 
-            4
+            this.test["Extraversion"], 
+            this.test["Agreeableness"], 
+            this.test["Conscientiousness"], 
+            this.test["EmotionalStability"], 
+            this.test["Intellect"]
             ],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -56,10 +56,16 @@ export class ResultsPage {
         }]
       },
       options: {
-        // responsive: true,
-        // animation: {
-        //   animationScale: true
-        // }
+        responsive: true,
+        animation: {
+          animationScale: true
+        },
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            max: 50
+          }
+        }
       }
     });
     
