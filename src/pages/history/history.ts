@@ -13,6 +13,7 @@ import { TestResultsProvider } from '../../providers/test-results/test-results';
 export class HistoryPage {
   
   tests: any = []; 
+  token: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -25,7 +26,8 @@ export class HistoryPage {
     console.log('ionViewDidLoad HistoryPage');
     //get rid of hard-coded and load actual test results
     // this.tests = JSON.parse(window.localStorage.getItem("tests")) || [];
-    let token = "fEMHZLODrwaGLISaSXPnhiEeNUnz65pSdOIEDzt4F3dnGHE1n1bAkAZJpFEwHZ7l";
+    // let token = "fEMHZLODrwaGLISaSXPnhiEeNUnz65pSdOIEDzt4F3dnGHE1n1bAkAZJpFEwHZ7l";
+    this.token = window.localStorage.getItem('token');
     this.testResults.getTestResults(token)
     .map(res => res.json())
     .subscribe(res => {
