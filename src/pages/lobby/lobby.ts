@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { QuestionPage } from '../question/question';
+import { HistoryPage } from '../history/history';
 // import { LandingPage } from '../landing/landing';
 import { BigFiveSumPage } from '../big-five-sum/big-five-sum';
 
@@ -37,7 +38,11 @@ export class LobbyPage {
     console.log("BigFiveSumPage");
     this.navCtrl.push(BigFiveSumPage);
   }
-
+  
+  getHistory() {
+    console.log("History Page");
+    this.navCtrl.push(HistoryPage);
+  }
   // logout() {
   //   this.appUser.logout(window.localStorage.token);
   //   this.navCtrl.setRoot(LandingPage);
