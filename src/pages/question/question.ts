@@ -74,7 +74,7 @@ export class QuestionPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public questionsProv: QuestionsProvider,
-    public testRgitesults: TestResultsProvider
+    public testResults: TestResultsProvider
   ) {
       questionsProv.getQuestions()
       .map(res => res.json())
