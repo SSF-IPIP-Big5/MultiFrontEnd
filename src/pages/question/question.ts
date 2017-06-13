@@ -139,11 +139,11 @@ export class QuestionPage {
       .map(res => res.json())
       .subscribe( res => {
           this.questions = res;
-          for(let singleQuestion of this.questions){
-            console.log(singleQuestion.Text);
-            console.log(singleQuestion);
-            
-          }
+          console.log(this.questions);
+          // for(let singleQuestion of this.questions){
+          //   console.log(singleQuestion.Text);
+          //   console.log(singleQuestion);
+          // }
       }, error =>{
         alert("Could not retrieve questions");
       });
