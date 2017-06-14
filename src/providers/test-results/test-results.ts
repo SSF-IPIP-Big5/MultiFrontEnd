@@ -12,7 +12,9 @@ import 'rxjs/add/operator/map';
 export class TestResultsProvider {
 
   //Strongloop API Explorer's request URL
-  baseUrl: string = "https://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+  // baseUrl: string = "https://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+  //for sals work
+  baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io/api";
   path: string = "/TestResults";
 
 
@@ -26,7 +28,7 @@ export class TestResultsProvider {
     return this.http.get(
       this.baseUrl + 
       this.path + 
-      '?filter[where][userId]=' + userId +
+      '?filter[userId]=' + userId +
       '?access_token=' + token
       
     );
