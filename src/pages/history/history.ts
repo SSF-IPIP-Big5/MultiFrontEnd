@@ -13,8 +13,8 @@ import { TestResultsProvider } from '../../providers/test-results/test-results';
 export class HistoryPage {
   
   tests: any = []; 
-  token: any;
-  userId: any;
+  token: any = "";
+  userId: any = "";
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,

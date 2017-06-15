@@ -12,9 +12,9 @@ import 'rxjs/add/operator/map';
 export class AppUsersProvider {
 
   //Strongloop API Explorer's request URL 
-  // baseUrl: string = "https://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+  baseUrl: string = "https://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
   //for sals work
-  baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io/api";
+  // baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io/api";
   path: string = "/AppUsers";
 
   constructor(public http: Http) {
