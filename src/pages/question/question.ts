@@ -138,6 +138,7 @@ export class QuestionPage {
       ////////////////////////////
       
       //Hacking this to make test faster-
+      //change 49 back to 1 and get rid of testAnwers object to reset to normal
       this.slides.slideTo(this.slides.getActiveIndex() + 49);
       this.testAnswers = {
       "Extraversion": 25,
