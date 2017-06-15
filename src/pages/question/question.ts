@@ -69,8 +69,9 @@ export class QuestionPage {
   @ViewChild(Slides) slides:Slides;
   questions: any = [];
   testAnswers: any = {};
-  token: any;
-
+  token: any = "";
+  userId: any = "";
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -101,8 +102,8 @@ export class QuestionPage {
       "Emotional Stability": 0,
       "Intellect": 0
     };
-    
-    
+    this.userId = window.localStorage.getItem('userId');
+    this.token = window.localStorage.getItem('token');
   }
   
   keyedScore(option) {
@@ -130,18 +131,38 @@ export class QuestionPage {
     this.keyedScore(option);
     if(this.slides.getActiveIndex() + 1 !== this.questions.length) {
       this.slides.lockSwipes(false);
-      this.slides.slideTo(this.slides.getActiveIndex() + 1);
+      
+      ////////////////////////////
+      //   Testing Purposes     //
+      //                        //
+      ////////////////////////////
+      
+      //Hacking this to make test faster-
+      this.slides.slideTo(this.slides.getActiveIndex() + 49);
+      this.testAnswers = {
+      "Extraversion": 25,
+      "Agreeableness": 30,
+      "Conscientiousness": 50,
+      "Emotional Stability": 40,
+      "Intellect": 50
+    };
+      
+      ////////////////////////////
+      //       End              //
+      ////////////////////////////
       this.slides.lockSwipes(true);
       console.log("current test answers:", this.testAnswers);
     // All slides have been completed, move onto ResultsPage
     } else {
       this.testAnswers.createDate = new Date().toISOString();
-      this.testAnswers.userId = "58f83b7bec68fd375bff47c6"; // hard coded userId
+      // this.testAnswers.userId = "58f83b7bec68fd375bff47c6"; // hard coded userId
+      this.testAnswers.userId = window.localStorage.userId;
       console.log("Finished Test", this.testAnswers)
       // 
       this.token = window.localStorage.getItem('token');
       let results = this.testAnswers;
-      this.testResults.saveTest(this.token, results)
+      let token = this.token;
+      this.testResults.saveTest(token, results)
         .map(res => res.json())
         .subscribe(res =>{
           this.navCtrl.setRoot(ResultsPage, {

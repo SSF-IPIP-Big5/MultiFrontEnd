@@ -28,9 +28,8 @@ export class TestResultsProvider {
     return this.http.get(
       this.baseUrl + 
       this.path + 
-      '?filter[userId]=' + userId +
-      '?access_token=' + token
-      
+      `?filter[where][userId]=${ userId }` +
+      `&access_token=${ token }`
     );
   }
 

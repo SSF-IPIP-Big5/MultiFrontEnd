@@ -24,12 +24,12 @@ export class HistoryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
-    //get rid of hard-coded and load actual test results
-    // this.tests = JSON.parse(window.localStorage.getItem("tests")) || [];
-    // let token = "fEMHZLODrwaGLISaSXPnhiEeNUnz65pSdOIEDzt4F3dnGHE1n1bAkAZJpFEwHZ7l";
+    
     this.token = window.localStorage.getItem('token');
     this.userId = window.localStorage.getItem('userId');
-    this.testResults.getTestResults(this.token, this.userId)
+    let token = this.token;
+    let userId = this.userId;
+    this.testResults.getTestResults(token, userId)
     .map(res => res.json())
     .subscribe(res => {
      this.tests = res;
