@@ -36,6 +36,8 @@ export class AppUsersProvider {
     return this.http.post( this.baseUrl + this.path + '/logout?access_token=' + token, {});
   }
 
-  
+  makeAdmin(userId, userData){ // add token? we'll see...
+    return this.http.patch( this.baseUrl + this.path + `/${ userId }`, userData);
+  }
 
 }

@@ -32,4 +32,14 @@
       Log Out
     </button>
   </ion-card>
+  <ion-card>
+    <button ion-button medium (click)="admin()">
+      Admin
+    </button>
+  </ion-card>
+  <ion-card *ngIf="isAdmin == true">
+    <button ion-button medium (click)="adminUsers()">View Company Users</button>
+    <button ion-button medium (click)="adminTests()">View Company Tests</button>
+    <button ion-button medium (click)="adminSettings()">Company Settings</button>
+  </ion-card>
 </ion-content>
