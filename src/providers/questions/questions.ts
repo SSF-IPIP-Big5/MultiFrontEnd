@@ -11,8 +11,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class QuestionsProvider {
 
-  //Strongloop API Explorer's request URL 
-  baseUrl: string = "https://sp-17-jenny-jbrownssf.c9users.io:8080/api";
+  //Strongloop API Explorer's request URL - regular
+  baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io:8080/api";
+  //for Sal's work
+  // baseUrl: string = "http://sp-17-salvatore-jbrownssf.c9users.io/api";
   path: string = "/Questions";
   
   constructor(public http: Http) {
@@ -22,7 +24,7 @@ export class QuestionsProvider {
   
   //Retrieve Goldberg's questions (50 questions) no token
   getQuestions(){
-    return this.http.get(this.baseUrl + this.path);
+    return this.http.get(this.baseUrl + this.path)
   }
   
   //Retrieve Goldberg's questions with authentication token

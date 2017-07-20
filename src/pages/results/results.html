@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary" text-center>
     <ion-title>Results</ion-title>
   </ion-navbar>
 
@@ -9,5 +9,14 @@
 
 
 <ion-content padding>
-
+  <ion-card>
+    <canvas #polarCanvas>
+      
+    </canvas>
+  </ion-card>
+  <ion-card>
+    <button ion-button (click)="goToLobby()">
+      Lobby
+    </button>
+  </ion-card>
 </ion-content>

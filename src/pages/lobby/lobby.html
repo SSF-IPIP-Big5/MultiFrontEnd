@@ -14,10 +14,32 @@
 
 
 <ion-content padding text-center>
+  <ion-card>
   <button ion-button medium (click)="takeTest()">
     Goldberg Big-Five Factor Markers
   </button>
   <button ion-button (click)="goToBigFiveSum()">
     <ion-icon name="help"></ion-icon>
   </button>
+  </ion-card>
+  <ion-card>
+    <button ion-button medium (click)="getHistory()">
+      Show Previous Tests
+    </button>
+  </ion-card>
+  <ion-card>
+    <button ion-button medium (click)="logout()">
+      Log Out
+    </button>
+  </ion-card>
+  <ion-card>
+    <button ion-button medium (click)="admin()">
+      Admin
+    </button>
+  </ion-card>
+  <ion-card *ngIf="isAdmin == true">
+    <button ion-button medium (click)="adminUsers()">View Company Users</button>
+    <button ion-button medium (click)="adminTests()">View Company Tests</button>
+    <button ion-button medium (click)="adminSettings()">Company Settings</button>
+  </ion-card>
 </ion-content>

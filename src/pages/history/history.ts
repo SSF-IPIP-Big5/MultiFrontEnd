@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ResultsPage } from '../results/results';
 
+import { TestResultsProvider } from '../../providers/test-results/test-results';
 
 @IonicPage()
 @Component({
@@ -12,16 +13,29 @@ import { ResultsPage } from '../results/results';
 export class HistoryPage {
   
   tests: any = []; 
-
+  token: any = "";
+  userId: any = "";
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams
+    public navParams: NavParams,
+    private testResults: TestResultsProvider
     ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
-    this.tests = JSON.parse(window.localStorage.getItem("tests")) || [];
+    
+    this.token = window.localStorage.getItem('token');
+    this.userId = window.localStorage.getItem('userId');
+    let token = this.token;
+    let userId = this.userId;
+    this.testResults.getTestResults(token, userId)
+    .map(res => res.json())
+    .subscribe(res => {
+     this.tests = res;
+     console.log("this should be a list of tests: ");
+     console.log(this.tests);
+    });
     console.log(this.tests);
   }
   
